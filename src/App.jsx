@@ -1,11 +1,27 @@
-import { PDFViewer } from "@react-pdf/renderer"
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer"
 import CV from "./components/CV"
 
 function App() {
   return (
     <main className=" text-white w-full">
-      <section className="flex flex-col justify-center items-center bg-slate-600 h-screen ">
-        <div className="w-full">
+      <section className="flex flex-col justify-center items-cente h-screen ">
+        <div className="hidden dosh:block">
+          <div className="flex flex-col justify-center items-center">
+            <PDFDownloadLink document={<CV />} fileName="CV.pdf">
+              {({ loading }) =>
+                loading ? "Loading PDF..." :
+                  (
+                    <button className="bg-blue-500 px-4 py-2 rounded-md">
+                      Download CV
+                    </button>
+                  )}
+            </PDFDownloadLink>
+            <PDFViewer className="my-10 h-screen">
+              <CV />
+            </PDFViewer>
+          </div>
+        </div>
+        <div className="w-full dosh:hidden">
           <PDFViewer className="w-full h-screen">
             <CV />
           </PDFViewer>
