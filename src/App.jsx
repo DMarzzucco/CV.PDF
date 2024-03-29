@@ -16,9 +16,6 @@ function App() {
                     </button>
                   )}
             </PDFDownloadLink>
-            <PDFViewer className="my-10 h-screen">
-              <CV />
-            </PDFViewer>
           </div>
         </div>
         <div className="w-full dosh:hidden">
