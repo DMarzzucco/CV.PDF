@@ -9,6 +9,9 @@ export default {
     extend: {
       width:{'300': '300px'}
     },
+    screens:{
+      'dosh': {'max': '1000px'},
+    }
   },
   plugins: [],
 }
